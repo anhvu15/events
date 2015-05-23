@@ -1,0 +1,17 @@
+<h2><%= pluralize(@events.size,"Event") %></h2>
+	<table id="event-list">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Description</th>				
+			</tr>
+		</thead>
+		<tbody>
+			<%@events.each do |event| %>
+				<tr>
+					<td><%=link_to event.name,event %></td>
+					<td><%=truncate(event.description,length: 15,separator: ' ') %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
